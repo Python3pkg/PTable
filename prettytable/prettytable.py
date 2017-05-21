@@ -1306,7 +1306,7 @@ class PrettyTable(object):
 
     def _stringify_row(self, row, options):
 
-        for index, field, value, width, in zip(range(0, len(row)), self._field_names, row, self._widths):
+        for index, field, value, width, in zip(list(range(0, len(row))), self._field_names, row, self._widths):
             # Enforce max widths
             lines = value.split("\n")
             new_lines = []

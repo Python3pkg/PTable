@@ -674,12 +674,12 @@ class PrintEnglishTest(CityDataTest):
     def test_h_print(self):
         print()
         print("Generated using setters:")
-        print(self.x)
+        print((self.x))
 
     def test_v_print(self):
         print()
         print("Generated using constructor arguments:")
-        print(self.y)
+        print((self.y))
 
 
 class PrintJapaneseTest(unittest.TestCase):
@@ -696,7 +696,7 @@ class PrintJapaneseTest(unittest.TestCase):
 
     def testPrint(self):
         print()
-        print(self.x)
+        print((self.x))
 
 
 class UnpaddedTableTest(unittest.TestCase):

@@ -1,6 +1,6 @@
 # !/usr/bin/python
 # This Python file uses the following encoding: utf-8
-from __future__ import print_function
+
 import unittest
 from prettytable.factory import from_md, split_md_row, strip_md_content
 

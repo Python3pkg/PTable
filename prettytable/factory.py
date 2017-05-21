@@ -26,7 +26,7 @@ def from_csv(fp, field_names=None, **kwargs):
         if py3k:
             table.field_names = [x.strip() for x in next(reader)]
         else:
-            table.field_names = [x.strip() for x in reader.next()]
+            table.field_names = [x.strip() for x in next(reader)]
 
     for row in reader:
         table.add_row([x.strip() for x in row])
@@ -153,8 +153,8 @@ def from_md(md, **kwargs):
     content_rows = rows[2:]
     table = PrettyTable(**kwargs)
     table.field_names = split_md_row(title_row)
-    map(table.add_row, map(split_md_row,
-                           filter(lambda x: x, content_rows)))
+    list(map(table.add_row, list(map(split_md_row,
+                           [x for x in content_rows if x]))))
     return table
 
 def strip_md_content(s):

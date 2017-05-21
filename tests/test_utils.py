@@ -1,5 +1,5 @@
 # -*- coding:utf-8 -*-
-from __future__ import unicode_literals
+
 import unittest
 
 from prettytable.prettytable import _char_block_width
@@ -8,8 +8,8 @@ from prettytable.prettytable import _char_block_width
 
 def _width_test_factory(width, words):
     def _(self):
-        map(lambda x: self.assertEqual(width, _char_block_width(ord(x))),
-            list(words))
+        list(map(lambda x: self.assertEqual(width, _char_block_width(ord(x))),
+            list(words)))
     return _
 
 

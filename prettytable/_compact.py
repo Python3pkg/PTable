@@ -13,15 +13,15 @@ if py3k:
     from html.parser import HTMLParser
     import io as StringIO
 else:
-    unicode_ = unicode
-    basestring_ = basestring
-    str_types = (unicode, str)
+    unicode_ = str
+    basestring_ = str
+    str_types = (str, str)
     import itertools
     itermap = itertools.imap
     iterzip = itertools.izip
-    uni_chr = unichr
-    from HTMLParser import HTMLParser
-    import StringIO
+    uni_chr = chr
+    from html.parser import HTMLParser
+    import io
 
 HTMLParser, StringIO
 
